@@ -1,5 +1,5 @@
-# Hackintosh - Dell Latitude 7390 EFI
-This Hackintosh EFI for Dell Latitude 7390 has been tested with BigSur & Ventura Mac OS. OpenCore v0.8.8 has been used to build the EFI.
+# Dell Latitude 7390 EFI - Ventura
+This Hackintosh EFI for Dell Latitude 7390 has been tested with BigSur & Ventura macOS. OpenCore v0.8.8 has been used to build the EFI.
 
 # <h2>Specification</h2>
 <ul>
