@@ -1,18 +1,35 @@
-# Dell Latitude 7390 EFI - Ventura
-This Hackintosh EFI for Dell Latitude 7390 has been tested with BigSur & Ventura macOS. OpenCore v0.8.8 has been used to build the EFI.
+# Dell Latitude 7390 EFI - macOS Ventura
 
-# <h2>Specification</h2>
-<ul>
-  <li>CPU: Intel Core i5-8350U</li>
-  <li>RAM: Micron 16GB</li>
-  <li>SSD: Micron 1300 M.2 2280 500GB SATA III</li>
-  <li>GPU: Intel UHD 620</li>
-  <li>Audio: Realtek ID 0256</li>
-  <li>WiFi & Bluetooth: Intel AC 8265</li>
-  <li>Ethernet: Intel I219-LM</li>
-  <li>Microphone: Builtin</li>
-  <li>Webcam: Builtin</li>
-</ul>
+[![Static Badge](https://img.shields.io/badge/macOS-Ventura-orange)](https://developer.apple.com/documentation/macos-release-notes/macos-13-release-notes)
+[![Static Badge](https://img.shields.io/badge/OpenCore-0.8.8-blue)](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.8.8)
+[![Static Badge](https://img.shields.io/badge/License-MIT-purple)](/LICENSE)
+
+Dell Latitude 7390 OpenCore EFI build for macOS Ventura v13.7.8. It also works wih macOS BigSur.
+
+## Screenshot
+
+<p>
+<figure>
+<img src="./screenshots/desktop.png" alt="macOS Ventura Desktop" />
+<figcaption>Screenshot of the macOS Ventura Desktop</figcaption>
+</figure>
+</p>
+
+## Specification
+
+| Device            | Model                               | Status   |
+| ----------------- | ----------------------------------- | -------- |
+| CPU               | Intel Core i5-8350U                 | Works    |
+| GPU               | Intel UHD Graphics 620              | Works    |
+| Memory            | SK hynix 16GB DDR4 2400 MHz         | Works    |
+| Drive             | Micron 1300 500GB SATA III          | Works    |
+| Audio             | Realtek ALC3246                     | Works    |
+| WiFi & BT         | Intel Wireless-AC 8265NGW           | Partial  |
+| Ethernet          | Intel Ethernet I219-LM              | Works    |
+| SD Card Reader    | Realtek Memory Card Reader          | Works    |
+| Smart Card Reader | Broadcom USH 5880                   | Untested |
+| Mic               | Builtin                             | Works    |
+| Webcam            | Builtin                             | Works    |
 
 # <h2>What Works?</h2>
 Pretty much everything holding the fact that you have the same specification on your laptop. Following item were tested in working order.
