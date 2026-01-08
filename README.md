@@ -22,35 +22,57 @@ Dell Latitude 7390 OpenCore EFI build for macOS Ventura v13.7.8. It also works w
 | CPU               | Intel Core i5-8350U                 | Works    |
 | GPU               | Intel UHD Graphics 620              | Works    |
 | Memory            | SK hynix 16GB DDR4 2400 MHz         | Works    |
-| Drive             | Micron 1300 500GB SATA III          | Works    |
+| Drive             | Samsung 970 EVO Plus                | Works    |
 | Audio             | Realtek ALC3246                     | Works    |
 | WiFi & BT         | Intel Wireless-AC 8265NGW           | Partial  |
 | Ethernet          | Intel Ethernet I219-LM              | Works    |
-| SD Card Reader    | Realtek Memory Card Reader          | Works    |
+| SD Card Reader    | Realtek RTS525A                     | Works    |
 | Smart Card Reader | Broadcom USH 5880                   | Untested |
 | Mic               | Builtin                             | Works    |
 | Webcam            | Builtin                             | Works    |
 
-# <h2>What Works?</h2>
-Pretty much everything holding the fact that you have the same specification on your laptop. Following item were tested in working order.
-<ul>
-  <li>GPU Support</li>
-  <li>Sound Card</li>
-  <li>Microphone</li>
-  <li>Webcam</li>
-  <li>USB Ports</li>
-  <li>Trackpad</li>
-  <li>Ethernet</li>
-  <li>WiFi</li>
-  <li>Keyboard Backlight</li>
-</ul>
-Please bare in mind that I didn't get the chance to test out the HDMI and SD Card Reader. Natively Mac OS supported WiFi modules should work out of the box but if you are using Intel based Card with different model number, please feel free to check out the <a href="https://github.com/OpenIntelWireless/itlwm/">OpenIntelWireless</a> repository for appropriate KEXT. You must use the <a href="https://openintelwireless.github.io/HeliPort/">HeliPort</a> app to connect to your network. Ethernet works without any issue.
+## BIOS
 
-# <h2>Important Note</h2>
-<ul>
-  <li>You must update your SMBIOS info and generate your own MLB, SystemSerialNumber and SystemUUID. Please DO NOT use mine.</li>
-  <li>I made lots of changes on Boot options section. So, please use <a href="https://github.com/ic005k/OCAuxiliaryTools">OC Auxiliary Tools</a> to re-adjust those changes as per Dortania's instruction mentioned <a href="https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#misc">here</a>.</li>
-  <li>I won't be providing any support with this EFI at this point as this was a hobby project and I am done with it for the most of the part.</li>
-</ul>
+The BIOS had been upgraded to v1.44.0 and following settings has been changed in order to make the installation process smoother.
 
-Thank you for stopping by.
+<details>
+<summary><strong>BIOS Options</strong></summary><br/>
+<ul>
+<li>Integrated NIC - Enabled</li>
+<li>SATA Operation - AHCI</li>
+<li>Keyboard Illumination - Disabled</li>
+<li>Touchscreen - Unchecked</li>
+<li>Absolute - Disabled</li>
+<li>Secure Boot Enable - Unchecked</li>
+<li>Secure Boot Mode - Audit Mode</li>
+<li>Intel SGX Enable - Disabled</li>
+<li>Wakes on LAN/WLAN - LAN Only</li>
+<li>Block Sleep - Unchecked</li>
+<li>Fastboot - Minimal</li>
+<li>Intel AMT Capability - Enabled</li>
+<li>UEFI Boot Path Security - Always, Except Internal HDD</li>
+<li>Virtualization - Enable Intel Virtualization Technology</li>
+<li>VT for Direct I/O - Enable VT for Direct I/O</li>
+<li>Trusted Execution - Checked</li>
+</ul>
+</details>
+
+## Notes
+
+<details>
+<summary><strong>Audio Issue</strong></summary><br/>
+Correct audio <code>layout-id</code> is crucially important for your audio device to work properly, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">supported codec</a> page which covers wide range of audio devices.
+</details>
+
+<details>
+<summary><strong>Generate SMBIOS</strong></summary><br/>
+Please do not use my SMBIOS included within this EFI. Feel free to generate your own SMBIOS with <a href="https://github.com/ic005k/OCAuxiliaryTools">OCAT</a> or any other tool that you are familiar with.
+</details>
+
+## Credits
+
+- [Acidanthera](https://github.com/acidanthera) - OpenCorePkg
+- [OpenIntelWireless](https://github.com/OpenIntelWireless) - Intel Wireless Kexts
+- [ic005k](https://github.com/ic005k) - OC Auxiliary Tools
+- [corpnewt](https://github.com/corpnewt/) - ProperTree
+- [badges](https://github.com/badges) - Shields.io
